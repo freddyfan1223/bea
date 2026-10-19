@@ -1,0 +1,17 @@
+{
+  "name": "Income Journal",
+  "short_name": "Income",
+  "description": "Private income tracker for shifts and side income",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#f6f7fb",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

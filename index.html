@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#f6f7fb"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Income Journal"><title>Income Journal</title><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" href="icon-512.png" type="image/png">
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;color:#172033;background:#f6f7fb;font-size:15px}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:520px;margin:auto;min-height:100dvh;padding:0 18px 105px}.top{padding:25px 2px 10px;display:flex;justify-content:space-between;align-items:center}.eyebrow{font-size:12px;color:#737c8e;font-weight:700;letter-spacing:.08em;text-transform:uppercase}h1{font-size:29px;letter-spacing:-.05em;margin:3px 0 0}h2{font-size:17px;letter-spacing:-.025em;margin:0}h3{font-size:14px;margin:0}.topbtn,.iconbtn{border:1px solid #e6e9f0;background:white;border-radius:13px;padding:11px 13px;color:#28354b}.card{background:#fff;border:1px solid #e9ecf2;border-radius:22px;padding:18px;margin-top:14px;box-shadow:0 3px 12px #27344e05}.hero{background:#17253d;color:#fff;border:0;padding:22px;border-radius:24px}.hero .muted{color:#b1bdd0}.hero .big{font-size:42px;font-weight:750;letter-spacing:-.055em;margin:10px 0}.muted{color:#81899a;font-size:13px}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.pill{font-size:12px;padding:6px 10px;border-radius:30px;background:#e9f8f1;color:#13764b;font-weight:650}.monthsel{display:flex;gap:8px;align-items:center}.monthsel button{border:1px solid #e5e8ee;background:white;border-radius:10px;padding:6px 10px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.stats .card{margin:0}.statnum{font-size:23px;font-weight:750;letter-spacing:-.045em;margin-top:10px}.bar{height:10px;background:#eff1f7;border-radius:20px;overflow:hidden;display:flex;margin:16px 0}.bar>span{height:100%}.legend{display:flex;flex-direction:column;gap:13px}.legendrow{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px}.dot{height:9px;width:9px;border-radius:50%;display:inline-block;margin-right:8px}.chart{height:130px;display:flex;align-items:end;gap:9px;margin:18px 0 5px}.colbar{flex:1;background:#788ded;border-radius:7px 7px 2px 2px;min-height:3px}.chartlabels{display:flex;gap:9px;color:#9299a8;font-size:10px;text-align:center}.chartlabels span{flex:1}.tabbar{position:fixed;z-index:10;bottom:0;left:0;right:0;background:#ffffffeb;backdrop-filter:blur(16px);border-top:1px solid #e9edf4;padding:10px max(14px,env(safe-area-inset-right)) max(14px,env(safe-area-inset-bottom));display:flex;justify-content:center}.tabinner{display:flex;width:100%;max-width:500px;justify-content:space-around}.tab{background:none;border:0;color:#9098a6;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:2px 12px;font-weight:600}.tab svg{width:23px;height:23px}.tab.active{color:#435dd0}.page{display:none}.page.active{display:block}.primary{background:#4a61df;color:#fff;border:0;border-radius:13px;padding:12px 16px;font-weight:700}.secondary{background:#f0f2f7;color:#2e3a54;border:0;border-radius:12px;padding:10px 13px}.danger{color:#c7334a;background:#fff0f2;border:none;border-radius:10px;padding:9px 11px}.list{display:flex;flex-direction:column;gap:1px}.item{padding:14px 0;border-bottom:1px solid #f0f1f5}.item:last-child{border:none}.itemtitle{font-weight:680}.itemsub{font-size:12px;color:#9299a7;margin-top:3px}.money{font-weight:720;font-variant-numeric:tabular-nums}.calendar-head{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;margin-top:17px;color:#949aab;font-size:11px}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:10px}.day{border:none;border-radius:12px;background:#f7f8fb;min-height:55px;display:flex;flex-direction:column;align-items:center;padding:9px 2px 6px;position:relative;color:#263246}.day.blank{visibility:hidden}.day.selected{background:#e8ecff;outline:2px solid #6074ee}.day.today .number{color:#495fd4;font-weight:800}.day .number{font-size:13px}.day .little{font-size:10px;color:#5e73c9;margin-top:5px;font-weight:650}.day .little.future{color:#a8adbd}.day .dots{display:flex;gap:2px;margin-top:5px}.day .dots i{width:5px;height:5px;border-radius:50%;background:#6477e8}.field{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:700;color:#647087;margin:14px 0}input,select{width:100%;background:#f9fafc;border:1px solid #e2e6ef;border-radius:12px;padding:12px;color:#17243c;outline:none}input:focus,select:focus{border-color:#7281de;background:white}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:6px;margin:20px 0 10px}.small{font-size:12px}.empty{text-align:center;color:#9da4b1;font-size:13px;padding:22px 8px}.badge{font-size:11px;color:#6a7384;background:#f0f2f7;padding:4px 7px;border-radius:8px}.modalbg{position:fixed;inset:0;background:#121e35a6;z-index:30;display:flex;align-items:flex-end;justify-content:center}.modal{background:white;border-radius:26px 26px 0 0;padding:22px 20px calc(24px + env(safe-area-inset-bottom));width:100%;max-width:520px;max-height:90dvh;overflow:auto}.hidden{display:none!important}.note{color:#949baa;font-size:12px;line-height:1.5}.chip{padding:8px 12px;border-radius:20px;background:#f1f3f8;color:#566178;font-size:12px}.toggle{display:flex;gap:9px;align-items:center;margin:10px 0}.toggle input{width:auto}.outlined{border:1px solid #e5e9ef;background:white;border-radius:12px;padding:10px 12px}.actions{display:flex;gap:9px;flex-wrap:wrap}.positive{color:#167f58}.pending{color:#8992a5}.gridmini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.gridmini>div{border-radius:12px;background:#f6f7fb;padding:12px 7px;text-align:center}.gridmini b{display:block;font-size:17px;margin:5px 0}.gridmini span{font-size:10px;color:#8a94a3}.monthpill{color:#b9c5ed;background:#2a3c5b;padding:5px 9px;border-radius:20px;font-size:11px}.space{height:7px}
+@supports (-webkit-touch-callout:none){.tabbar{transform:translateZ(0)}.tab{touch-action:manipulation;min-height:54px}}
+.tab{min-width:0;flex:1} .tabbar{width:100%;padding-left:14px;padding-right:14px} .tabinner{gap:1px}
+
+/* Mobile preview fixes: scroll content within a viewport-sized frame. */
+html,body{width:100%;height:100%;overflow:hidden}
+body{height:100vh;height:100dvh}
+.shell{height:100%;min-height:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding-bottom:calc(112px + env(safe-area-inset-bottom))}
+.tabbar{position:fixed;bottom:0;left:0;right:0;z-index:20;transform:none!important;min-height:73px}
+.tab{touch-action:manipulation;min-height:55px;justify-content:center;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.notice{background:#fff8df;border:1px solid #e8c979;color:#635016;border-radius:14px;font-size:13px;line-height:1.5;padding:12px 14px;margin:12px 2px}
+.notice b{color:#54400b}
+/* Without JavaScript, anchors permit view-only tab previews in capable viewers. */
+body:not(.js-ready) .page:target{display:block}
+body:not(.js-ready):has(.page:target) .page.active:not(:target){display:none}
+body:not(.js-ready) .tab:focus{color:#435dd0}
+
+/* Version 2.2 — stable iPhone layout: never trigger iOS focus zoom (16px minimum). */
+html{min-width:0;max-width:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%;overscroll-behavior:none}
+body{width:100%;min-width:0;max-width:100%;height:100vh;height:100svh;overflow:hidden}
+.shell{width:100%;max-width:520px;height:100%;min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
+input,select,textarea{font-size:16px!important;line-height:1.35;min-width:0;max-width:100%;touch-action:manipulation}
+textarea{resize:none}
+button,.tab{touch-action:manipulation}
+.modalbg{overscroll-behavior:contain}
+.modal{max-height:88vh;max-height:88svh;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.formrow{min-width:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.formrow>*{min-width:0}
+.row>*{min-width:0}
+.top{justify-content:flex-start}
+.income-intro{display:flex;gap:14px;justify-content:space-between;align-items:center;margin:14px 0 16px}
+.income-intro .muted{line-height:1.55;margin:0;flex:1}
+.income-intro button{flex:none;white-space:nowrap}
+.stream-cards{display:flex;flex-direction:column;gap:15px;padding-bottom:10px}
+.stream-card{margin-top:0}
+.stream-top{display:flex;align-items:center;gap:11px}
+.stream-symbol{width:41px;height:41px;border-radius:14px;flex:none;background:#e9edff;color:#4a61df;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800}
+.stream-details{min-width:0;flex:1}
+.stream-details h2{font-size:18px;overflow-wrap:anywhere}
+.stream-details .itemsub{margin-top:4px}
+.stream-top .outlined{font-size:12px;flex:none}
+.stream-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#f6f7fc;padding:14px 12px;border-radius:15px;margin-top:17px}
+.stream-summary .sum-label{font-size:11px;font-weight:700;color:#7e8899;letter-spacing:.02em}
+.stream-summary .sum-value{font-size:23px;letter-spacing:-.04em;font-weight:780;margin-top:3px;font-variant-numeric:tabular-nums}
+.stream-summary button{white-space:nowrap;font-size:13px;padding:12px 13px}
+.stream-items-heading{font-size:12px;font-weight:700;color:#737d90;margin-top:20px;margin-bottom:2px}
+.stream-entries .item{padding:13px 0}
+.stream-entries .item:last-child{padding-bottom:0}
+.stream-entries .itemtitle{overflow-wrap:anywhere}
+.stream-entries .entry-actions{margin-top:8px}
+.stream-entries .entry-actions button{font-size:12px;padding:7px 10px}
+@media(max-width:350px){.stream-summary{align-items:stretch;flex-direction:column}.stream-summary button{width:100%}}
+
+/* v2.3 — Preserve the real iPhone status bar (time / Wi-Fi / battery).
+   Standalone web apps use Apple's native status bar in default (dark icons) mode.
+   With viewport-fit=cover, leave iOS's reported top safe-area unobstructed. */
+html, body { background-color:#f6f7fb; }
+.shell { padding-top:env(safe-area-inset-top, 0px); }
+/* Keep the app's bottom navigation above the home indicator. */
+.tabbar { padding-bottom:max(14px, env(safe-area-inset-bottom, 0px)); }
+
+
+
+/* v2.6 — Use the approved illustrated celebration screens as popups */
+.reward-overlay{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;background:rgba(10,21,38,.62);padding:calc(14px + env(safe-area-inset-top)) 14px calc(14px + env(safe-area-inset-bottom));backdrop-filter:blur(7px)}
+.reward-card{position:relative;width:min(100%,380px);max-height:100%;overflow:auto;border-radius:30px;background:#fffdfa;box-shadow:0 24px 70px rgba(17,32,53,.35);border:1px solid rgba(255,255,255,.92);overscroll-behavior:contain;animation:reward-pop .28s ease-out}
+.reward-close{position:absolute;top:14px;right:14px;z-index:4;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.92);backdrop-filter:blur(4px);font-size:23px;color:#43506b;line-height:1}
+.reward-illustration-wrap{position:relative;padding:14px 14px 0}
+.reward-illustration{display:block;width:100%;height:auto;border-radius:26px;box-shadow:0 10px 28px rgba(13,25,43,.14)}
+.reward-live-amount{position:absolute;display:none;z-index:3;pointer-events:none;font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.03em;color:#c68c25;text-shadow:0 1px 0 rgba(255,255,255,.55)}
+.reward-live-amount.visible{display:block}
+.reward-live-note{position:absolute;display:none;z-index:3;pointer-events:none;font-size:11px;font-weight:700;color:#213b67;background:rgba(255,250,244,.92);padding:6px 10px;border-radius:999px;box-shadow:0 6px 20px rgba(17,32,53,.10)}
+.reward-live-note.visible{display:block}
+.reward-card.variant-welldone .reward-live-amount{left:50%;top:75.8%;transform:translate(-50%,-50%);font-size:clamp(46px,9.2vw,82px)}
+.reward-card.variant-adventure .reward-live-amount{left:40.3%;top:76.9%;transform:translate(-50%,-50%);font-size:clamp(42px,8.7vw,75px)}
+.reward-card.variant-future .reward-live-amount{left:7.8%;bottom:3.8%;transform:none;font-size:clamp(24px,5.2vw,42px)}
+.reward-card.variant-rest .reward-live-note{left:50%;bottom:7.6%;transform:translateX(-50%)}
+.reward-body{padding:14px 16px 18px}
+.reward-minirow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.reward-pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:8px 11px;font-size:11px;font-weight:760;background:#eef2ff;color:#4056c8}
+.reward-pill.secondary{background:#fff3e7;color:#93623c}
+.reward-copy{font-size:13px;line-height:1.56;color:#677284;margin:0 0 14px}
+.reward-go{width:100%;border:0;border-radius:16px;padding:14px 15px;font-size:15px;font-weight:760;color:#fff;background:#173254}
+.reward-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px}
+.reward-footnote{font-size:11px;color:#8b93a3;line-height:1.45}
+.reward-dots{display:flex;gap:6px;justify-content:flex-end}
+.reward-dots i{display:block;width:8px;height:8px;border-radius:50%;background:#d0d6e4}
+.reward-dots i.active{background:#4a61df}
+@keyframes reward-pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.reward-card{animation:none}}
+
+
+</style></head><body><div class="shell"><div id="runtimeStatus" class="notice"><b>Preview mode:</b> This viewer has not started the app's JavaScript. If the buttons stay inactive, open this HTML using a JavaScript-capable preview app. The iPhone Files preview cannot run the full app. You can tap the bottom links to inspect the page layouts in some viewers, but data entry needs JavaScript.</div><div id="storageNotice" class="notice hidden"><b>Temporary preview:</b> This viewer does not permit device storage. Buttons may work, but entries might disappear when you close or reload the page. Use a browser or a web preview that allows storage before entering real data.</div><header class="top"><div><div class="eyebrow">PERSONAL FINANCES</div><h1 id="pageTitle">Summary</h1></div></header>
+<section id="overview" class="page active"><div class="row" style="margin:10px 0"><div class="monthsel"><button data-month="-1">‹</button><b id="monthName"></b><button data-month="1">›</button></div><span class="chip">GBP · Gross income</span></div><div class="card hero"><div class="row"><span class="muted">Earned this month</span><span class="monthpill" id="comparison">—</span></div><div class="big" id="heroTotal">£0.00</div><div class="row muted"><span id="heroSub">Across your income streams</span><span id="monthProgress"></span></div></div><div class="stats"><div class="card"><div class="muted">Job income</div><div class="statnum" id="jobTotal">£0</div><div class="muted" id="jobCount">0 shifts completed</div></div><div class="card"><div class="muted">Side income</div><div class="statnum" id="sideTotal">£0</div><div class="muted" id="saleCount">0 sales logged</div></div></div><div class="card"><div class="row"><h2>Income breakdown</h2><span class="muted" id="streamCount">0 sources</span></div><div class="bar" id="distribution"></div><div class="legend" id="distributionLegend"></div></div><div class="card"><div class="row"><h2>Last 6 months</h2><span class="muted">Monthly totals</span></div><div class="chart" id="monthlyChart"></div><div class="chartlabels" id="chartLabels"></div></div><div class="card"><div class="row"><h2>Upcoming shifts</h2><button class="secondary small" data-nav="shifts">View calendar</button></div><div class="list" id="upcoming"></div></div></section>
+<section id="shifts" class="page"><div class="row" style="margin-top:12px"><div class="monthsel"><button data-cal="-1">‹</button><b id="calMonthName"></b><button data-cal="1">›</button></div><button class="primary" id="addShift">+ Shift</button></div><div class="card"><div class="calendar-head"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar" id="calendar"></div></div><div class="card"><div class="row"><h2 id="selectedDateTitle">Shifts</h2><button class="secondary small" id="addSelected">+ Add</button></div><div class="list" id="dayShifts"></div></div><p class="note">Scheduled shifts count towards earnings automatically once their end time has passed. Future shifts are excluded.</p></section>
+<section id="income" class="page"><div class="income-intro"><p class="muted">Every sale or payment lives inside its own income stream.</p><button class="secondary" id="addStream">+ Stream</button></div><div class="stream-cards" id="streamEntries"></div></section>
+<section id="settings" class="page"><p class="muted">Set your jobs and hourly rates. Changes to a rate apply only to new shifts; existing shifts retain their saved rate.</p><div class="sectionhead"><h2>Part-time jobs</h2><button class="primary" id="addJob">+ Job</button></div><div class="card"><div class="list" id="jobsList"></div></div><div class="sectionhead"><h2>Data and preferences</h2></div><div class="card"><h3>Private, on this device</h3><p class="note">Your data is stored in this browser only. Export a backup regularly, especially before clearing browser data or changing phones.</p><div class="actions"><button class="secondary" id="exportData">Export backup</button><button class="secondary" id="importData">Import backup</button><input class="hidden" type="file" accept="application/json" id="importFile"></div><hr style="border:0;border-top:1px solid #eef0f5;margin:20px 0"><hr style="border:0;border-top:1px solid #eef0f5;margin:20px 0"/><h3>Sici's celebrations</h3><p class="note">When your recorded earnings increase since your last visit, Income Journal rotates through your 4 chosen celebration moods: <b>Well done</b>, <b>Adventure mode</b>, <b>Future goals</b> and <b>Rest and recharge</b>. The app now uses the 4 illustrated celebration screens you approved as the pop-up reward designs.</p><label class="toggle"><input type="checkbox" id="siciEnabled" checked><span>Celebrate new earnings</span></label><div class="actions"><button class="secondary" type="button" id="previewSici">Preview next celebration ✨</button></div><p class="note">The app cycles through the 4 illustrated screens in turn, so the reward feels personal without getting repetitive.</p><hr style="border:0;border-top:1px solid #eef0f5;margin:20px 0"/><h3>Accounting notes</h3><p class="note">Totals are gross earnings before tax, National Insurance, refunds, fees or costs. For overnight shifts, income is counted when the shift ends. Side-income entries count on the date supplied. These are earnings estimates, not confirmation of payment received.</p></div></section></div>
+<nav class="tabbar"><div class="tabinner"><a href="#overview" class="tab active" data-nav="overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5 12 3l9 7.5V21h-7v-7h-4v7H3z"/></svg>Home</a><a href="#shifts" class="tab" data-nav="shifts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/></svg>Shifts</a><a href="#income" class="tab" data-nav="income"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M16 15h2"/></svg>Side income</a><a href="#settings" class="tab" data-nav="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1m0-14.2L17 7M7 17l-2.1 2.1"/></svg>Settings</a></div></nav>
+<div class="modalbg hidden" id="modalbg"><div class="modal"><div class="row"><h2 id="modalTitle"></h2><button class="iconbtn" id="closeModal">✕</button></div><div id="modalBody"></div></div></div>
+<div id="rewardCelebration" class="reward-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="rewardInfo" aria-describedby="rewardInfo">
+ <div class="reward-card" id="rewardCard"><button id="closeReward" class="reward-close" type="button" aria-label="Dismiss celebration">×</button>
+  <div class="reward-illustration-wrap"><img id="rewardIllustration" class="reward-illustration" src="illustrated-celebration-1.png" alt="Illustrated Income Journal celebration screen"><div id="rewardLiveAmount" class="reward-live-amount">+£0</div><div id="rewardLiveNote" class="reward-live-note">+£0 since your last visit</div></div>
+  <div class="reward-body">
+   <div class="reward-minirow"><span class="reward-pill" id="rewardVariantLabel">Well done</span><span class="reward-pill secondary" id="rewardAmountNote">New earnings since last visit: +£0.00</span></div>
+   <p class="reward-copy" id="rewardInfo">A little reward popup from your chosen Income Journal celebration designs.</p>
+   <button id="dismissReward" class="reward-go" type="button">Continue ✨</button>
+   <div class="reward-foot"><div class="reward-footnote">Triggered when your total recorded income is higher than the last time you opened the app.</div><div class="reward-dots" id="rewardDots"></div></div>
+  </div>
+ </div>
+</div>
+<script>
+(()=>{'use strict';const KEY='income-journal-v1';const now=()=>new Date();const pad=n=>String(n).padStart(2,'0');const localDate=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;const atLocal=(date,time='00:00')=>new Date(`${date}T${time}:00`);const uuid=()=>globalThis.crypto?.randomUUID?.()||`${Date.now()}-${Math.random()}`;const currency=n=>new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(n||0);const compact=n=>new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP',maximumFractionDigits:0}).format(n||0);const fmtDate=s=>atLocal(s).toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});const monthKey=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}`;const offsetMonth=(d,x)=>new Date(d.getFullYear(),d.getMonth()+x,1);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const $=id=>document.getElementById(id);const defaultData={jobs:[],streams:[{id:'vinted',name:'Vinted'}],shifts:[],sales:[]};let db;try{const saved=JSON.parse(localStorage.getItem(KEY));db=saved&&Array.isArray(saved.jobs)&&Array.isArray(saved.streams)&&Array.isArray(saved.shifts)&&Array.isArray(saved.sales)?saved:JSON.parse(JSON.stringify(defaultData))}catch{db=JSON.parse(JSON.stringify(defaultData))}let view='overview',selected=localDate(now()),displayMonth=offsetMonth(now(),0),calendarMonth=offsetMonth(now(),0);const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){console.warn('Storage unavailable in this preview',e)}render()};const makeButton=(label,fn,cls='secondary')=>{const b=document.createElement('button');b.textContent=label;b.className=cls;b.onclick=fn;return b};function closeModal(){$('modalbg').classList.add('hidden');$('modalBody').innerHTML=''}function modal(title,markup,submit){$('modalTitle').textContent=title;$('modalBody').innerHTML=`<form id="modalForm">${markup}<div class="actions" style="margin-top:20px"><button class="primary" type="submit">Save</button><button type="button" class="secondary" id="cancelModal">Cancel</button></div></form>`;$('modalbg').classList.remove('hidden');$('cancelModal').onclick=closeModal;$('modalForm').onsubmit=e=>{e.preventDefault();if(submit(new FormData(e.target))!==false)closeModal()}}function field(label,name,type='text',value='',extra=''){return `<label class="field">${label}<input type="${type}" name="${name}" value="${esc(value)}" ${extra} required></label>`}function selectField(label,name,options,selected){return `<label class="field">${label}<select name="${name}" required>${options.map(o=>`<option value="${esc(o.id)}" ${o.id===selected?'selected':''}>${esc(o.name)}</option>`).join('')}</select></label>`}function openJob(job){modal(job?'Edit job':'New job',field('Job title','name','text',job?.name||'','maxlength="80"')+field('Hourly pay (£)','rate','number',job?.rate??'','min="0" step="0.01"'),f=>{const name=f.get('name').trim(),rate=Number(f.get('rate'));if(!name||!Number.isFinite(rate)||rate<0)return false;if(job)Object.assign(job,{name,rate});else db.jobs.push({id:uuid(),name,rate});persist()})}function openStream(st){modal(st?'Edit income stream':'New income stream',field('Stream name','name','text',st?.name||'','maxlength="80"'),f=>{let name=f.get('name').trim();if(!name)return false;if(st)st.name=name;else db.streams.push({id:uuid(),name});persist()})}function endAt(s){const start=atLocal(s.date,s.start);const end=atLocal(s.date,s.end);if(end<=start)end.setDate(end.getDate()+1);return end}function hours(s){return Math.max(0,(endAt(s)-atLocal(s.date,s.start))/3600000-(Number(s.breakMin)||0)/60)}function earned(s){return endAt(s)<=now()}function shiftMoney(s){return Math.max(0,hours(s)*Number(s.rate||0))}function shiftMonth(s){return monthKey(endAt(s))}function openShift(shift,date=selected){if(!db.jobs.length){alert('Add a job and hourly rate in Settings first.');navigate('settings');return}const j=shift?db.jobs.find(x=>x.id===shift.jobId):db.jobs[0];modal(shift?'Edit shift':'Add shift',selectField('Job','jobId',db.jobs.map(x=>({id:x.id,name:x.name})),shift?.jobId||j?.id)+field('Shift date','date','date',shift?.date||date)+`<div class="formrow">${field('Start time','start','time',shift?.start||'09:00')}${field('End time','end','time',shift?.end||'17:00')}</div>`+field('Unpaid break (minutes)','breakMin','number',shift?.breakMin??0,'min="0" step="1"')+`<p class="note">If the end time is earlier than the start time, the shift is treated as overnight. Your saved hourly rate is locked to this shift.</p>`,f=>{let job=db.jobs.find(x=>x.id===f.get('jobId'));let obj={id:shift?.id||uuid(),jobId:job.id,jobName:job.name,rate:shift&&shift.jobId===job.id?shift.rate:job.rate,date:f.get('date'),start:f.get('start'),end:f.get('end'),breakMin:Number(f.get('breakMin'))};if(!obj.date||!obj.start||!obj.end||obj.breakMin<0||obj.breakMin>24*60||hours(obj)<=0){alert('Please check the shift hours and unpaid break.');return false}if(shift)Object.assign(shift,obj);else db.shifts.push(obj);selected=obj.date;calendarMonth=atLocal(obj.date);persist()})}function openSale(sale,streamId){if(!db.streams.length){alert('Add an income stream first.');return}modal(sale?'Edit income':'Log side income',selectField('Income stream','streamId',db.streams.map(x=>({id:x.id,name:x.name})),sale?.streamId||streamId||db.streams[0].id)+field('Item / description','item','text',sale?.item||'','maxlength="120"')+field('Income amount (£)','amount','number',sale?.amount??'','step="0.01" min="0"')+field('Income date','date','date',sale?.date||localDate(now()))+`<p class="note">Enter your income amount; costs, platform fees and tax are not automatically deducted.</p>`,f=>{const amount=Number(f.get('amount')),item=f.get('item').trim();if(!Number.isFinite(amount)||amount<0||!item)return false;const obj={id:sale?.id||uuid(),streamId:f.get('streamId'),item,amount,date:f.get('date')};if(sale)Object.assign(sale,obj);else db.sales.push(obj);persist()})}function confirmDelete(type,id){if(confirm('Delete this entry? This cannot be undone.')){db[type]=db[type].filter(x=>x.id!==id);persist()}}function navigate(v){view=v;document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e.id===v));document.querySelectorAll('[data-nav]').forEach(e=>e.classList.toggle('active',e.dataset.nav===v));$('pageTitle').textContent={overview:'Summary',shifts:'Shift calendar',income:'Side income',settings:'Settings'}[v];render();document.querySelector('.shell').scrollTop=0}function render(){renderOverview();renderCalendar();renderIncome();renderSettings()}function currentStats(date){const mk=monthKey(date);let shifts=db.shifts.filter(s=>earned(s)&&shiftMonth(s)===mk);let sales=db.sales.filter(s=>s.date.slice(0,7)===mk);return {shifts,sales,jobSum:shifts.reduce((a,s)=>a+shiftMoney(s),0),sideSum:sales.reduce((a,s)=>a+Number(s.amount),0)}}function renderOverview(){const d=displayMonth;const stat=currentStats(d),total=stat.jobSum+stat.sideSum;const prior=currentStats(offsetMonth(d,-1)),prev=prior.jobSum+prior.sideSum;$('monthName').textContent=d.toLocaleDateString('en-GB',{month:'long',year:'numeric'});$('heroTotal').textContent=currency(total);$('jobTotal').textContent=compact(stat.jobSum);$('sideTotal').textContent=compact(stat.sideSum);$('jobCount').textContent=`${stat.shifts.length} completed shift${stat.shifts.length===1?'':'s'}`;$('saleCount').textContent=`${stat.sales.length} entr${stat.sales.length===1?'y':'ies'} logged`;$('monthProgress').textContent=monthKey(d)===monthKey(now())?`Day ${now().getDate()}`:'';$('comparison').textContent=prev?`${total>=prev?'+':''}${Math.round((total-prev)/prev*100)}% vs previous`: '— vs previous';const items=[];for(const j of db.jobs){const v=stat.shifts.filter(s=>s.jobId===j.id).reduce((a,s)=>a+shiftMoney(s),0);if(v>0)items.push({name:j.name,v})}for(const stream of db.streams){const v=stat.sales.filter(s=>s.streamId===stream.id).reduce((a,s)=>a+Number(s.amount),0);if(v>0)items.push({name:stream.name,v})}const colors=['#6b80e7','#f2ae78','#66baa4','#ba93e2','#7cabb9','#e18dab','#b0ae62'];$('streamCount').textContent=`${items.length} source${items.length===1?'':'s'}`;$('distribution').innerHTML=items.length?items.map((x,i)=>`<span style="background:${colors[i%colors.length]};width:${(x.v/total*100)}%"></span>`).join(''):'<span style="background:#eceef5;width:100%"></span>';$('distributionLegend').innerHTML=items.length?items.map((x,i)=>`<div class="legendrow"><span><i class="dot" style="background:${colors[i%colors.length]}"></i>${esc(x.name)}</span><b>${currency(x.v)} <span class="muted">· ${Math.round(x.v/total*100)}%</span></b></div>`).join(''):'<div class="empty">Add shifts and income to see your breakdown</div>';const months=Array.from({length:6},(_,i)=>offsetMonth(d,i-5));const vals=months.map(m=>{let x=currentStats(m);return x.jobSum+x.sideSum}),max=Math.max(...vals,1);$('monthlyChart').innerHTML=vals.map((v,i)=>`<div class="colbar" title="${esc(months[i].toLocaleDateString('en-GB',{month:'long'}))}: ${currency(v)}" style="height:${Math.max(3,(v/max)*100)}%;opacity:${i===5?1:.45}"></div>`).join('');$('chartLabels').innerHTML=months.map(m=>`<span>${m.toLocaleDateString('en-GB',{month:'short'})}</span>`).join('');let future=db.shifts.filter(s=>endAt(s)>now()).sort((a,b)=>atLocal(a.date,a.start)-atLocal(b.date,b.start)).slice(0,3);$('upcoming').innerHTML=future.length?future.map(s=>`<div class="item row"><div><div class="itemtitle">${esc(s.jobName)}</div><div class="itemsub">${fmtDate(s.date)} · ${s.start}–${s.end}</div></div><div class="money">${currency(shiftMoney(s))}<div class="itemsub" style="text-align:right">Expected</div></div></div>`).join(''):'<div class="empty">No upcoming shifts scheduled</div>'}function renderCalendar(){const d=calendarMonth,y=d.getFullYear(),m=d.getMonth(),n=new Date(y,m+1,0).getDate(),first=(new Date(y,m,1).getDay()+6)%7;$('calMonthName').textContent=d.toLocaleDateString('en-GB',{month:'long',year:'numeric'});let html='';for(let i=0;i<first;i++)html+='<div class="day blank"></div>';for(let nday=1;nday<=n;nday++){let date=`${y}-${pad(m+1)}-${pad(nday)}`,shifts=db.shifts.filter(s=>s.date===date),total=shifts.filter(earned).reduce((a,s)=>a+shiftMoney(s),0);html+=`<button class="day ${date===selected?'selected':''} ${date===localDate(now())?'today':''}" data-day="${date}"><span class="number">${nday}</span>${total?`<span class="little">${compact(total)}</span>`:shifts.length?'<span class="little future">Planned</span>':''}${shifts.length?'<span class="dots"><i></i></span>':''}</button>`}$('calendar').innerHTML=html;document.querySelectorAll('[data-day]').forEach(x=>x.onclick=()=>{selected=x.dataset.day;renderCalendar()});$('selectedDateTitle').textContent=fmtDate(selected);const shifts=db.shifts.filter(s=>s.date===selected).sort((a,b)=>a.start.localeCompare(b.start));$('dayShifts').innerHTML=shifts.length?'':'<div class="empty">No shifts for this day</div>';for(const s of shifts){const el=document.createElement('div');el.className='item';el.innerHTML=`<div class="row"><div><div class="itemtitle">${esc(s.jobName)}</div><div class="itemsub">${s.start}–${s.end} · ${hours(s).toFixed(2)} paid hours</div></div><div style="text-align:right"><div class="money">${currency(shiftMoney(s))}</div><div class="itemsub ${earned(s)?'positive':'pending'}">${earned(s)?'Earned':'Scheduled'}</div></div></div>`;const actions=document.createElement('div');actions.className='actions';actions.style.marginTop='10px';actions.append(makeButton('Edit',()=>openShift(s), 'outlined'),makeButton('Delete',()=>confirmDelete('shifts',s.id),'danger'));el.append(actions);$('dayShifts').append(el)}}function renderIncome(){
+ const month=monthKey(now());
+ const host=$('streamEntries');
+ if(!db.streams.length){host.innerHTML='<div class="card empty">No income streams yet. Tap + Stream to create your first.</div>';return}
+ host.innerHTML=db.streams.map((stream,index)=>{
+   const sales=db.sales.filter(s=>s.streamId===stream.id).sort((a,b)=>b.date.localeCompare(a.date));
+   const monthSales=sales.filter(s=>s.date.slice(0,7)===month);
+   const monthTotal=monthSales.reduce((sum,s)=>sum+Number(s.amount),0);
+   const allTotal=sales.reduce((sum,s)=>sum+Number(s.amount),0);
+   const entryHtml=sales.length?sales.map(s=>`<div class="item">
+     <div class="row"><div><div class="itemtitle">${esc(s.item)}</div><div class="itemsub">${fmtDate(s.date)}</div></div><div class="money">${currency(Number(s.amount))}</div></div>
+     <div class="actions entry-actions"><button class="outlined small" data-edit-sale="${esc(s.id)}">Edit</button><button class="danger small" data-del-sale="${esc(s.id)}">Delete</button></div>
+   </div>`).join(''):'<div class="empty">No entries yet. Add your first sale or payment.</div>';
+   return `<div class="card stream-card" data-income-stream="${esc(stream.id)}">
+      <div class="stream-top"><span class="stream-symbol" aria-hidden="true">${esc(stream.name.slice(0,1).toUpperCase())}</span><div class="stream-details"><h2>${esc(stream.name)}</h2><div class="itemsub">${sales.length} ${sales.length===1?'entry':'entries'} · ${currency(allTotal)} total</div></div><button class="outlined" data-edit-stream="${esc(stream.id)}">Edit</button></div>
+      <div class="stream-summary"><div><div class="sum-label">This month</div><div class="sum-value">${currency(monthTotal)}</div></div><button class="primary" data-add-income="${esc(stream.id)}">+ Add income</button></div>
+      <div class="stream-items-heading">INCOME ENTRIES</div><div class="list stream-entries">${entryHtml}</div>
+   </div>`;
+ }).join('');
+ host.querySelectorAll('[data-add-income]').forEach(b=>b.onclick=()=>openSale(undefined,b.dataset.addIncome));
+ host.querySelectorAll('[data-edit-stream]').forEach(b=>b.onclick=()=>openStream(db.streams.find(s=>s.id===b.dataset.editStream)));
+ host.querySelectorAll('[data-edit-sale]').forEach(b=>b.onclick=()=>openSale(db.sales.find(s=>s.id===b.dataset.editSale)));
+ host.querySelectorAll('[data-del-sale]').forEach(b=>b.onclick=()=>confirmDelete('sales',b.dataset.delSale));
+}function renderSettings(){$('jobsList').innerHTML=db.jobs.length?'':'<div class="empty">Add your part-time jobs and hourly pay</div>';for(const job of db.jobs){const el=document.createElement('div');el.className='item';el.innerHTML=`<div class="row"><div><div class="itemtitle">${esc(job.name)}</div><div class="itemsub">${currency(job.rate)} per hour</div></div></div>`;const acts=document.createElement('div');acts.className='actions';acts.style.marginTop='10px';acts.append(makeButton('Edit',()=>openJob(job),'outlined'),makeButton('Delete',()=>{if(db.shifts.some(s=>s.jobId===job.id)){alert('This job has shifts. Keep it for your income history or remove its shifts first.');return}confirmDelete('jobs',job.id)},'danger'));el.append(acts);$('jobsList').append(el)}}document.querySelectorAll('[data-nav]').forEach(x=>x.onclick=e=>{e.preventDefault();navigate(x.dataset.nav)});document.querySelectorAll('[data-month]').forEach(x=>x.onclick=()=>{displayMonth=offsetMonth(displayMonth,Number(x.dataset.month));renderOverview()});document.querySelectorAll('[data-cal]').forEach(x=>x.onclick=()=>{calendarMonth=offsetMonth(calendarMonth,Number(x.dataset.cal));selected=localDate(calendarMonth);renderCalendar()});$('addJob').onclick=()=>openJob();$('addStream').onclick=()=>openStream();$('addShift').onclick=()=>openShift();$('addSelected').onclick=()=>openShift();$('closeModal').onclick=closeModal;$('modalbg').onclick=e=>{if(e.target===$('modalbg'))closeModal()};$('exportData').onclick=()=>{const blob=new Blob([JSON.stringify({app:'income-journal',version:1,exportedAt:new Date().toISOString(),data:db},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`income-journal-backup-${localDate(now())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)};$('importData').onclick=()=>$('importFile').click();$('importFile').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{const obj=JSON.parse(await file.text()),incoming=obj.data||obj;if(!['jobs','streams','shifts','sales'].every(k=>Array.isArray(incoming[k])))throw Error('Invalid backup');if(confirm('Importing replaces all current data. Continue?')){db=incoming;persist();snapshotEarnings();alert('Backup imported.')}}catch{alert('This does not appear to be a valid backup file.')}e.target.value=''};
+
+/* Reward only real positive changes in all-time recorded earnings, never a month rollover.
+   A new installation sets its first baseline without a popup. */
+const SICI_VISIT_KEY='income-journal-sici-last-open-v2';
+const SICI_PREF_KEY='income-journal-sici-enabled-v2';
+const SICI_THEME_KEY='income-journal-sici-theme-v2';
+const CELEBRATIONS=[
+  {key:'welldone',className:'variant-welldone',amountMode:'overlay',title:'Well done',image:'illustrated-celebration-1.png',button:'You’re amazing ✨',copy:'A warm, joyful little celebration with Sici giving you a kiss.'},
+  {key:'adventure',className:'variant-adventure',amountMode:'overlay',title:'Adventure mode',image:'illustrated-celebration-2.png',button:'Let\'s go ✈️',copy:'An energetic, travel-themed celebration to match your bigger dreams.'},
+  {key:'future',className:'variant-future',amountMode:'overlay',title:'Future goals',image:'illustrated-celebration-3.png',button:'Keep going 💫',copy:'A hopeful, aspirational moment with your progress and vision.'},
+  {key:'rest',className:'variant-rest',amountMode:'note',title:'Rest and recharge',image:'illustrated-celebration-4.png',button:'Take a breather ♡',copy:'A calm, cosy reminder to be proud and take care of yourself.'}
+];
+let siciEnabled=true;
+try{siciEnabled=localStorage.getItem(SICI_PREF_KEY)!=='false'}catch(e){}
+$('siciEnabled').checked=siciEnabled;
+function totalEarnedAsOf(t=new Date()){
+  const shiftTotal=db.shifts.reduce((sum,s)=>{
+    const finish=endAt(s);
+    return sum+(Number.isFinite(finish.getTime())&&finish<=t?shiftMoney(s):0);
+  },0);
+  const sideTotal=db.sales.reduce((sum,s)=>{
+    const day=atLocal(s.date);
+    return sum+(Number.isFinite(day.getTime())&&day<=t?Math.max(0,Number(s.amount)||0):0);
+  },0);
+  return Math.round((shiftTotal+sideTotal)*100)/100;
+}
+function snapshotEarnings(){
+  try{localStorage.setItem(SICI_VISIT_KEY,JSON.stringify({amount:totalEarnedAsOf(),at:Date.now()}))}catch(e){}
+}
+function getCelebrationVariant(advance=true){
+  let idx=0;
+  try{idx=Math.max(0,Number(localStorage.getItem(SICI_THEME_KEY))||0)}catch(e){}
+  const variant=CELEBRATIONS[idx%CELEBRATIONS.length];
+  if(advance){
+    try{localStorage.setItem(SICI_THEME_KEY,String((idx+1)%CELEBRATIONS.length))}catch(e){}
+  }
+  return variant;
+}
+function renderCelebrationDots(activeKey){
+  $('rewardDots').innerHTML=CELEBRATIONS.map(v=>`<i class="${v.key===activeKey?'active':''}" aria-hidden="true"></i>`).join('');
+}
+function showSiciCelebration(extra, previewOnly=false){
+  const variant=getCelebrationVariant(true);
+  $('rewardCard').className='reward-card '+variant.className;
+  $('rewardIllustration').src=variant.image;
+  $('rewardIllustration').alt=variant.title+' illustrated celebration screen';
+  $('rewardVariantLabel').textContent=variant.title;
+  $('rewardAmountNote').textContent=previewOnly?('Preview amount: '+currency(extra)):('New earnings since last visit: '+currency(extra));
+  $('rewardInfo').textContent=previewOnly?('Preview mode: this is the illustrated “'+variant.title+'” celebration screen.') : variant.copy;
+  $('dismissReward').textContent=variant.button;
+  const amountText='+'+currency(extra).replace('£','£');
+  $('rewardLiveAmount').textContent=amountText;
+  $('rewardLiveNote').textContent=previewOnly?('Preview amount: '+currency(extra)):(currency(extra)+' since your last visit');
+  $('rewardLiveAmount').classList.toggle('visible', variant.amountMode==='overlay');
+  $('rewardLiveNote').classList.toggle('visible', variant.amountMode==='note');
+  renderCelebrationDots(variant.key);
+  $('rewardCelebration').classList.remove('hidden');
+}
+function hideSiciCelebration(){ $('rewardCelebration').classList.add('hidden'); }
+function checkEarningsSinceLastOpen(){
+  const current=totalEarnedAsOf();let previous=null;
+  try{const record=JSON.parse(localStorage.getItem(SICI_VISIT_KEY));
+      if(record&&Number.isFinite(record.amount))previous=record.amount;
+  }catch(e){}
+  snapshotEarnings();
+  const extra=Math.round((current-(previous??current))*100)/100;
+  if(siciEnabled&&previous!==null&&extra>=0.01)showSiciCelebration(extra,false);
+}
+$('previewSici').onclick=()=>showSiciCelebration(128,true);
+$('siciEnabled').onchange=e=>{siciEnabled=e.target.checked;
+  try{localStorage.setItem(SICI_PREF_KEY,String(siciEnabled))}catch(e){}};
+$('closeReward').onclick=hideSiciCelebration;
+$('dismissReward').onclick=hideSiciCelebration;
+$('rewardCelebration').onclick=e=>{if(e.target===$('rewardCelebration'))hideSiciCelebration()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')hideSiciCelebration()});
+let siciWasHidden=false;
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='hidden')siciWasHidden=true;
+  else if(siciWasHidden){siciWasHidden=false;checkEarningsSinceLastOpen();}
+});
+window.addEventListener('pageshow',e=>{if(e.persisted){siciWasHidden=false;checkEarningsSinceLastOpen()}});
+
+document.body.classList.add('js-ready');$('runtimeStatus').classList.add('hidden');let canStore=false;try{const k=KEY+'-storage-test';localStorage.setItem(k,'1');canStore=localStorage.getItem(k)==='1';localStorage.removeItem(k)}catch(e){console.warn('Local storage not available',e)}if(!canStore)$('storageNotice').classList.remove('hidden');render();checkEarningsSinceLastOpen();setInterval(render,60000);if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
+})();
+</script></body></html>
