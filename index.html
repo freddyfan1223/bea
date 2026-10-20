@@ -64,32 +64,22 @@ html, body { background-color:#f6f7fb; }
 
 
 
-/* v2.6 — Use the approved illustrated celebration screens as popups */
-.reward-overlay{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;background:rgba(10,21,38,.62);padding:calc(14px + env(safe-area-inset-top)) 14px calc(14px + env(safe-area-inset-bottom));backdrop-filter:blur(7px)}
-.reward-card{position:relative;width:min(100%,380px);max-height:100%;overflow:auto;border-radius:30px;background:#fffdfa;box-shadow:0 24px 70px rgba(17,32,53,.35);border:1px solid rgba(255,255,255,.92);overscroll-behavior:contain;animation:reward-pop .28s ease-out}
-.reward-close{position:absolute;top:14px;right:14px;z-index:4;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.92);backdrop-filter:blur(4px);font-size:23px;color:#43506b;line-height:1}
-.reward-illustration-wrap{position:relative;padding:14px 14px 0}
-.reward-illustration{display:block;width:100%;height:auto;border-radius:26px;box-shadow:0 10px 28px rgba(13,25,43,.14)}
-.reward-live-amount{position:absolute;display:none;z-index:3;pointer-events:none;font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.03em;color:#c68c25;text-shadow:0 1px 0 rgba(255,255,255,.55)}
-.reward-live-amount.visible{display:block}
-.reward-live-note{position:absolute;display:none;z-index:3;pointer-events:none;font-size:11px;font-weight:700;color:#213b67;background:rgba(255,250,244,.92);padding:6px 10px;border-radius:999px;box-shadow:0 6px 20px rgba(17,32,53,.10)}
-.reward-live-note.visible{display:block}
-.reward-card.variant-welldone .reward-live-amount{left:50%;top:75.8%;transform:translate(-50%,-50%);font-size:clamp(46px,9.2vw,82px)}
-.reward-card.variant-adventure .reward-live-amount{left:40.3%;top:76.9%;transform:translate(-50%,-50%);font-size:clamp(42px,8.7vw,75px)}
-.reward-card.variant-future .reward-live-amount{left:7.8%;bottom:3.8%;transform:none;font-size:clamp(24px,5.2vw,42px)}
-.reward-card.variant-rest .reward-live-note{left:50%;bottom:7.6%;transform:translateX(-50%)}
-.reward-body{padding:14px 16px 18px}
-.reward-minirow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
-.reward-pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:8px 11px;font-size:11px;font-weight:760;background:#eef2ff;color:#4056c8}
-.reward-pill.secondary{background:#fff3e7;color:#93623c}
-.reward-copy{font-size:13px;line-height:1.56;color:#677284;margin:0 0 14px}
-.reward-go{width:100%;border:0;border-radius:16px;padding:14px 15px;font-size:15px;font-weight:760;color:#fff;background:#173254}
-.reward-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px}
-.reward-footnote{font-size:11px;color:#8b93a3;line-height:1.45}
-.reward-dots{display:flex;gap:6px;justify-content:flex-end}
-.reward-dots i{display:block;width:8px;height:8px;border-radius:50%;background:#d0d6e4}
-.reward-dots i.active{background:#4a61df}
-@keyframes reward-pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+/* v2.8 — Illustration-only celebration popup */
+.reward-overlay{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;background:rgba(10,21,38,.62);padding:calc(12px + env(safe-area-inset-top)) 12px calc(12px + env(safe-area-inset-bottom));backdrop-filter:blur(8px)}
+.reward-card{position:relative;width:min(100%,402px);max-height:100%;overflow:visible;border-radius:34px;background:transparent;box-shadow:none;border:0;animation:reward-pop .24s ease-out}
+.reward-close{position:absolute;top:16px;right:16px;z-index:6;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);box-shadow:0 10px 28px rgba(17,32,53,.16);font-size:28px;color:#515a70;line-height:1}
+.reward-illustration-wrap{position:relative}
+.reward-illustration{display:block;width:100%;height:auto;border-radius:34px;box-shadow:0 24px 70px rgba(17,32,53,.34)}
+.reward-live-amount,.reward-live-note{position:absolute;display:none;z-index:4;pointer-events:none}
+.reward-live-amount{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.035em;color:#c6891d;text-shadow:0 1px 0 rgba(255,255,255,.55);text-align:center;line-height:1;white-space:nowrap}
+.reward-live-note{font-size:12px;font-weight:800;color:#22355f;background:rgba(250,246,240,.96);padding:8px 12px;border-radius:999px;box-shadow:0 8px 22px rgba(17,32,53,.14);white-space:nowrap}
+.reward-live-amount.visible,.reward-live-note.visible{display:block}
+.reward-card.variant-welldone .reward-live-amount{left:50%;top:73.1%;transform:translate(-50%,-50%);width:57%;font-size:64px}
+.reward-card.variant-adventure .reward-live-amount{left:39.8%;top:76.0%;transform:translate(-50%,-50%);width:44%;font-size:58px}
+.reward-card.variant-future .reward-live-amount{left:8.6%;bottom:4.8%;transform:none;width:24%;font-size:30px;text-align:left}
+.reward-card.variant-rest .reward-live-note{left:50%;bottom:10.8%;transform:translateX(-50%);font-size:13px;padding:9px 14px}
+.reward-body{display:none!important}
+@keyframes reward-pop{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.reward-card{animation:none}}
 
 
@@ -182,13 +172,26 @@ function showSiciCelebration(extra, previewOnly=false){
   $('rewardCard').className='reward-card '+variant.className;
   $('rewardIllustration').src=variant.image;
   $('rewardIllustration').alt=variant.title+' illustrated celebration screen';
+  const amount=currency(extra);
+  const overlayAmount='+'+amount;
   $('rewardVariantLabel').textContent=variant.title;
-  $('rewardAmountNote').textContent=previewOnly?('Preview amount: '+currency(extra)):('New earnings since last visit: '+currency(extra));
+  $('rewardAmountNote').textContent=previewOnly?('Preview amount: '+amount):('New earnings since last visit: '+amount);
   $('rewardInfo').textContent=previewOnly?('Preview mode: this is the illustrated “'+variant.title+'” celebration screen.') : variant.copy;
   $('dismissReward').textContent=variant.button;
-  const amountText='+'+currency(extra).replace('£','£');
-  $('rewardLiveAmount').textContent=amountText;
-  $('rewardLiveNote').textContent=previewOnly?('Preview amount: '+currency(extra)):(currency(extra)+' since your last visit');
+  const amountEl=$('rewardLiveAmount');
+  amountEl.textContent=overlayAmount;
+  amountEl.style.fontSize='';
+  amountEl.style.letterSpacing='';
+  const len=overlayAmount.length;
+  if(variant.key==='welldone'){
+    amountEl.style.fontSize=(len>=9?'54px':len===8?'58px':len===7?'62px':'66px');
+  }else if(variant.key==='adventure'){
+    amountEl.style.fontSize=(len>=9?'48px':len===8?'52px':len===7?'56px':'60px');
+  }else if(variant.key==='future'){
+    amountEl.style.fontSize=(len>=9?'24px':len===8?'26px':len===7?'28px':'30px');
+    amountEl.style.letterSpacing='-.02em';
+  }
+  $('rewardLiveNote').textContent=previewOnly?('Preview: '+amount):(amount+' since last visit');
   $('rewardLiveAmount').classList.toggle('visible', variant.amountMode==='overlay');
   $('rewardLiveNote').classList.toggle('visible', variant.amountMode==='note');
   renderCelebrationDots(variant.key);

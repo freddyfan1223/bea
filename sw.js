@@ -1,4 +1,4 @@
-const CACHE = 'income-journal-cache-v9';
+const CACHE = 'income-journal-cache-v11';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon-512.png', './apple-touch-icon.png', './illustrated-celebration-1.png', './illustrated-celebration-2.png', './illustrated-celebration-3.png', './illustrated-celebration-4.png'];
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
